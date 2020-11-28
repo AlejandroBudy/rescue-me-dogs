@@ -1,5 +1,6 @@
 package org.rescueme.es.domain.model
 
-data class Dog(val uuid: String,
+data class Dog(val uuid: String?,
                val name: String,
-               val breed: String)
+               val breed: String,
+               val shelter: Shelter)
