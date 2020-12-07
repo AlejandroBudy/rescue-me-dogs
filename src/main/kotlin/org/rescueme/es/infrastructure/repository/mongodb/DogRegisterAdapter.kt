@@ -3,15 +3,16 @@ package org.rescueme.es.infrastructure.repository.mongodb
 import org.rescueme.es.domain.model.Dog
 import org.rescueme.es.domain.ports.outbound.DogsRegisterRepository
 import org.rescueme.es.infrastructure.repository.mongodb.model.DogEntity
-import org.rescueme.es.infrastructure.repository.mongodb.repository.InMemoryDataBase
+import org.rescueme.es.infrastructure.repository.mongodb.repository.DogReactiveRepository
 import org.springframework.stereotype.Component
+import reactor.core.publisher.Mono
 
 @Component
-class DogRegisterAdapter(private val dataRepository: InMemoryDataBase) : DogsRegisterRepository {
+class DogRegisterAdapter(private val dogReactiveRepository: DogReactiveRepository) : DogsRegisterRepository {
 
-    override fun registerDog(dog: Dog): Dog =
+    override fun registerDog(dog: Dog): Mono<Dog> =
             dog.let { DogEntity.fromDomain(it) }
-                    .let { dataRepository.save(it) }
-                    .let { DogEntity.toDomain(it!!) }
+                    .let { dogReactiveRepository.save(it) }
+                    .let { mono -> mono.map { DogEntity.toDomain(it) } }
 
 }

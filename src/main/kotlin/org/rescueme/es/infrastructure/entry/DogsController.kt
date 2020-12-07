@@ -1,13 +1,13 @@
 package org.rescueme.es.infrastructure.entry
 
-import org.rescueme.es.domain.model.Dog
+import org.rescueme.es.configuration.logger
 import org.rescueme.es.domain.ports.inbound.DogRegister
 import org.rescueme.es.domain.ports.inbound.DogRetriever
 import org.rescueme.es.infrastructure.entry.model.DogsPayload
 import org.rescueme.es.infrastructure.entry.model.ShelterPayload
-import org.springframework.http.HttpStatus
-import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
+import reactor.core.publisher.Flux
+import reactor.core.publisher.Mono
 
 
 @RestController
@@ -15,22 +15,24 @@ class DogsController(private val dogRetriever: DogRetriever,
                      private val dogRegister: DogRegister) {
 
     @GetMapping("/dogs/{uuid}")
-    fun getAllDogsInShelter(@PathVariable uuid: String) =
+    fun getAllDogsInShelter(@PathVariable uuid: String): Flux<DogsPayload> =
             uuid.let { ShelterPayload.toDomain(uuid = it) }
-                    .also { println("Looking for dogs int shelter $it") }
+                    .also { log.info("Looking for dogs int shelter $it") }
                     .let { dogRetriever.findAllDogsByShelter(it) }
-                    .let { list: List<Dog> ->
-                        list.map { DogsPayload.fromDomain(it) }
+                    .let { flux ->
+                        flux.map { DogsPayload.fromDomain(it) }
                     }
-                    .let { ResponseEntity(it, HttpStatus.OK) }
 
 
     @PostMapping("/dogs/{uuid}")
-    fun registerDogInShelter(@PathVariable uuid: String, @RequestBody dog: DogsPayload) =
+    fun registerDogInShelter(@PathVariable uuid: String, @RequestBody dog: DogsPayload): Mono<DogsPayload> =
             dog.let { DogsPayload.toDomain(it, uuid) }
-                    .also { println("Registering new dog $it in shelter $uuid") }
+                    .also { log.info("Registering new dog $it in shelter $uuid") }
                     .let { dogRegister.registerDogInShelter(it) }
-                    .let { DogsPayload.fromDomain(it) }
+                    .let { mono -> mono.map { DogsPayload.fromDomain(it) } }
 
+    companion object {
+        val log by logger()
+    }
 
 }

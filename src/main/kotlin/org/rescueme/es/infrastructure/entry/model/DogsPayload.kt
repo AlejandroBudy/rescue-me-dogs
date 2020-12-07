@@ -1,12 +1,13 @@
 package org.rescueme.es.infrastructure.entry.model
 
+import com.fasterxml.jackson.annotation.JsonProperty
 import org.rescueme.es.domain.model.Dog
 import java.util.*
 
 data class DogsPayload(val id: String?,
                        val name: String,
                        val breed: String,
-                       val shelterPayload: ShelterPayload?) {
+                       @JsonProperty("shelter") val shelterPayload: ShelterPayload?) {
     companion object {
         fun fromDomain(dog: Dog) =
                 DogsPayload(

@@ -3,6 +3,7 @@ package org.rescueme.es.infrastructure.entry.model
 import org.rescueme.es.domain.model.Shelter
 import java.util.*
 
+
 data class ShelterPayload(val uuid: String) {
     companion object {
         fun toDomain(uuid: String) =
