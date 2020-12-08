@@ -1,4 +1,4 @@
-package org.rescueme.es.infrastructure.entry.model
+package org.rescueme.es.infrastructure.entry.api.model
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import org.rescueme.es.domain.model.Dog

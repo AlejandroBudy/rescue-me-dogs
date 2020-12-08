@@ -1,4 +1,4 @@
-package org.rescueme.es.infrastructure.entry.model
+package org.rescueme.es.infrastructure.entry.api.model
 
 import org.rescueme.es.domain.model.Shelter
 import java.util.*

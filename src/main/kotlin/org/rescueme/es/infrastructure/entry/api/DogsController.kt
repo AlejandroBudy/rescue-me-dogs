@@ -1,10 +1,10 @@
-package org.rescueme.es.infrastructure.entry
+package org.rescueme.es.infrastructure.entry.api
 
 import org.rescueme.es.configuration.logger
 import org.rescueme.es.domain.ports.inbound.DogRegister
 import org.rescueme.es.domain.ports.inbound.DogRetriever
-import org.rescueme.es.infrastructure.entry.model.DogsPayload
-import org.rescueme.es.infrastructure.entry.model.ShelterPayload
+import org.rescueme.es.infrastructure.entry.api.model.DogsPayload
+import org.rescueme.es.infrastructure.entry.api.model.ShelterPayload
 import org.springframework.web.bind.annotation.*
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
