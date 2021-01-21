@@ -96,13 +96,30 @@
             <version>1.10.3</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.axonframework</groupId>
+            <artifactId>axon-spring-boot-starter</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.kotato</groupId>
+            <artifactId>KAxon-CQRS</artifactId>
+            <version>0.0.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
     </dependencies>
 
     <repositories>
         <repository>
             <id>spek-dev</id>
             <url>https://dl.bintray.com/spekframework/spek-dev</url>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
         </repository>
     </repositories>
 
