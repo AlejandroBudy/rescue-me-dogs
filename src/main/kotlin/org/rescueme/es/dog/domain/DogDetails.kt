@@ -1,4 +1,8 @@
 package org.rescueme.es.dog.domain
 
-class DogDetails(val name: String, val breed: String) {
-}
+import org.rescueme.es.shared.valueobject.ValueObject
+
+@ValueObject
+data class DogDetails(
+        val name: String,
+        val breed: String)

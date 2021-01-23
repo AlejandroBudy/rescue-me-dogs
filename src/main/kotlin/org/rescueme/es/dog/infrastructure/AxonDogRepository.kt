@@ -9,9 +9,9 @@ import org.springframework.stereotype.Repository
 import org.axonframework.commandhandling.model.Repository as AggregateRepository
 
 @Repository
-class AxonDogRepository(private val persistenceRespository: AggregateRepository<Dog>) : DogRepository {
+open class AxonDogRepository(private val persistenceRepository: AggregateRepository<Dog>) : DogRepository {
     override fun new(dogId: DogId, shelterId: ShelterId, details: DogDetails) {
-        persistenceRespository.newInstance {
+        persistenceRepository.newInstance {
             Dog.create(dogId, shelterId, details)
             Dog()
         }

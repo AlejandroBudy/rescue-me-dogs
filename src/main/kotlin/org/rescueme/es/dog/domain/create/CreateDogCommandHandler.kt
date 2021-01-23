@@ -7,7 +7,7 @@ import org.rescueme.es.shelter.domain.ShelterId
 import org.springframework.stereotype.Component
 
 @Component
-class CreateDogCommandHandler(private val creator: DogCreator) {
+open class CreateDogCommandHandler(private val creator: DogCreator) {
 
     @CommandHandler
     fun on(createDogCommand: CreateDogCommand) {
