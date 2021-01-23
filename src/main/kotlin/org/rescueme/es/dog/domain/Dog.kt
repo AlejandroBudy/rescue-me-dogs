@@ -25,13 +25,11 @@ class Dog {
 
     companion object {
         fun create(dogId: DogId, shelterId: ShelterId, dogDetails: DogDetails) {
-            val dogCreatedEvent = DogCreatedEvent(
+            apply(DogCreatedEvent(
                     aggregateId = dogId.asString(),
                     occurredOn = ZonedDateTime.now(),
                     shelterId = shelterId.asString(),
-                    dogDetails = dogDetails)
-            println("Dog created event: $dogCreatedEvent")
-            apply(dogCreatedEvent)
+                    dogDetails = dogDetails))
         }
     }
 }

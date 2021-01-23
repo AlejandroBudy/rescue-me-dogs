@@ -1,6 +1,6 @@
 package org.rescueme.es.dog.adapter.create
 
-import org.rescueme.es.shared.command.CommandBus
+import org.rescueme.es.shared.command.domain.CommandBus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
