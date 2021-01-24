@@ -1,12 +1,12 @@
 package org.rescueme.es.dog.domain.view
 
-import org.rescueme.es.dog.domain.DogDetails
+import org.rescueme.es.dog.domain.DogInformation
 
 fun DogView.toResponse() =
         DogResponse(id.asString(),
                 shelterId.asString(),
                 createdOn,
-                details.toResponse())
+                information.toResponse())
 
-fun DogDetails.toResponse() =
+fun DogInformation.toResponse() =
         DogDetailsResponse(name, breed)

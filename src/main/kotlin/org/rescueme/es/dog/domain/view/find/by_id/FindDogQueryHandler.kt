@@ -1,4 +1,4 @@
-package org.rescueme.es.dog.domain.view.find
+package org.rescueme.es.dog.domain.view.find.by_id
 
 import org.axonframework.queryhandling.QueryHandler
 import org.rescueme.es.dog.domain.DogId

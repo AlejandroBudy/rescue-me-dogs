@@ -12,7 +12,7 @@ import java.util.*
 @RestController
 class CreateDogController(private val commandBus: CommandBus) {
 
-    @PostMapping("/dogs/{uuid}")
+    @PostMapping("/dogs/shelter/{uuid}")
     fun registerDogInShelter(@PathVariable uuid: String, @RequestBody dog: CreateDogRequest): ResponseEntity<Unit> {
         val dogId = UUID.randomUUID().toString()
         commandBus.dispatch(dog.createCommand(dogId, uuid))
