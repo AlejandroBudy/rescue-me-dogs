@@ -8,6 +8,9 @@ import java.time.ZonedDateTime
 
 val dateTime: ZonedDateTime = ZonedDateTime.now()
 
+const val shelterId: String = "shelter"
+const val dogId: String = "dogId"
+
 fun createDogResponse() =
         DogResponse(id = "dogID",
                 shelterId = "shelter",
