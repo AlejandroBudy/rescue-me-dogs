@@ -3,14 +3,15 @@ package org.rescueme.es.dog.adapter.create
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
+import org.jetbrains.spek.api.Spek
+import org.jetbrains.spek.api.dsl.describe
+import org.jetbrains.spek.api.dsl.it
 import org.rescueme.es.shared.command.domain.CommandBus
-import org.spekframework.spek2.Spek
-import org.spekframework.spek2.style.specification.describe
 import org.springframework.http.HttpStatus
 import java.util.*
 import kotlin.test.assertEquals
 
-object CreateDogControllerTest : Spek({
+object CreateDogControllerSpec : Spek({
 
     val commandBus = mockk<CommandBus>()
     val controller = CreateDogController(commandBus)

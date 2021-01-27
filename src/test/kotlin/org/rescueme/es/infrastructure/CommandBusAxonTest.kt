@@ -1,12 +1,14 @@
-package org.rescueme.es.shared.command.infrastructure
+package org.rescueme.es.infrastructure
 
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
 import org.axonframework.commandhandling.gateway.CommandGateway
+import org.jetbrains.spek.api.Spek
+import org.jetbrains.spek.api.dsl.describe
+import org.jetbrains.spek.api.dsl.it
 import org.rescueme.es.shared.command.domain.Command
-import org.spekframework.spek2.Spek
-import org.spekframework.spek2.style.specification.describe
+import org.rescueme.es.shared.command.infrastructure.CommandBusAxon
 
 object CommandBusAxonTest : Spek({
 

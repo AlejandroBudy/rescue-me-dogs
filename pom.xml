@@ -65,15 +65,16 @@
         </dependency>
 
         <dependency>
-            <groupId>org.spekframework.spek2</groupId>
-            <artifactId>spek-dsl-jvm</artifactId>
-            <version>${spek.version}</version>
+            <groupId>org.jetbrains.spek</groupId>
+            <artifactId>spek-api</artifactId>
+            <version>1.1.5</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.spekframework.spek2</groupId>
-            <artifactId>spek-runner-junit5</artifactId>
-            <version>${spek.version}</version>
+            <groupId>org.jetbrains.spek</groupId>
+            <artifactId>spek-junit-platform-engine</artifactId>
+            <version>1.1.5</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
