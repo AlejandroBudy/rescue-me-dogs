@@ -7,13 +7,13 @@ import org.jetbrains.spek.api.dsl.on
 
 class DogSpec : Spek({
 
-    describe("#${Dog::on.name}") {
+    describe("#${Dog::onDogCreatedEvent.name}") {
 
-        on("") {
+        on("Dog created Event") {
+            val event =
+                it("") {
 
-            it("") {
-
-            }
+                }
         }
     }
 })

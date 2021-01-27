@@ -12,10 +12,12 @@ class CreateDogViewOnDogCreatedEventHandler(private val creator: DogViewCreator)
     @EventHandler
     fun on(event: DogCreatedEvent) {
         println("About to process event $event")
-        creator(DogId.fromString(event.aggregateId),
-                ShelterId.fromString(event.shelterId),
-                event.dogInformation,
-                event.occurredOn)
+        creator(
+            DogId.fromString(event.aggregateId),
+            ShelterId.fromString(event.shelterId),
+            event.dogInformation,
+            event.occurredOn
+        )
     }
 
 }

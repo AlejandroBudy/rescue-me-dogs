@@ -10,6 +10,6 @@ class FindDogByShelterQueryHandler(private val finder: DogByShelterFinder) {
 
     @QueryHandler
     fun on(findDogByShelterQuery: FindDogByShelterQuery) =
-            finder(ShelterId.fromString(findDogByShelterQuery.id)).toResponse()
+        finder(ShelterId.fromString(findDogByShelterQuery.id)).toResponse()
 
 }

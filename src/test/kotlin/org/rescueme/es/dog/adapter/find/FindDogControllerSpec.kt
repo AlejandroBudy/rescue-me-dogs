@@ -22,7 +22,7 @@ import org.springframework.http.ResponseEntity
 import java.util.concurrent.CompletableFuture
 import kotlin.test.assertEquals
 
-object FindDogControllerSpec : Spek({
+class FindDogControllerSpec : Spek({
 
 
     val queryBus = mockk<QueryBusAxon>()

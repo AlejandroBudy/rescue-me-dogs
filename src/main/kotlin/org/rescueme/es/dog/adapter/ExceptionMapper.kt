@@ -11,5 +11,5 @@ class ControllerAdvice {
 
     @ExceptionHandler(DogViewNotFoundException::class)
     fun dogViewNotFound(e: DogViewNotFoundException) =
-            ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.message ?: "")
+        ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.message ?: "")
 }

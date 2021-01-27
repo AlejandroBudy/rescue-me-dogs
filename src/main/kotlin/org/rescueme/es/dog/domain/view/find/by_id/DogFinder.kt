@@ -9,5 +9,5 @@ import org.springframework.stereotype.Component
 class DogFinder(private val repository: DogViewRepository) {
 
     operator fun invoke(id: DogId) =
-            repository.find(id).also { it ?: throw DogViewNotFoundException("Dog with id: $id does not exists") }!!
+        repository.find(id).also { it ?: throw DogViewNotFoundException("Dog with id: $id does not exists") }!!
 }

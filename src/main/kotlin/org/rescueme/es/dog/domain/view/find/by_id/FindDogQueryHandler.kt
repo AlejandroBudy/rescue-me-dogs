@@ -10,5 +10,5 @@ open class FindDogQueryHandler(private val dogFinder: DogFinder) {
 
     @QueryHandler
     open fun on(findDogQuery: FindDogQuery) =
-            dogFinder(DogId.fromString(findDogQuery.id)).toResponse()
+        dogFinder(DogId.fromString(findDogQuery.id)).toResponse()
 }

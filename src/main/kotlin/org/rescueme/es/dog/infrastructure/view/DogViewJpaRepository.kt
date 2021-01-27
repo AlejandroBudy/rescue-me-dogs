@@ -9,16 +9,17 @@ import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Component
 
 @Component
-open class DogViewJpaRepository(private val jpaPersistenceRepository: DogViewJpaPersistenceRepository) : DogViewRepository {
+open class DogViewJpaRepository(private val jpaPersistenceRepository: DogViewJpaPersistenceRepository) :
+    DogViewRepository {
     override fun save(dogView: DogView) {
         jpaPersistenceRepository.save(dogView)
     }
 
     override fun find(id: DogId) =
-            jpaPersistenceRepository.findByIdOrNull(id)
+        jpaPersistenceRepository.findByIdOrNull(id)
 
-    override fun findByShelter(id: ShelterId): DogView?  =
-            jpaPersistenceRepository.findByShelterId(id)
+    override fun findByShelter(id: ShelterId): DogView? =
+        jpaPersistenceRepository.findByShelterId(id)
 
 }
 

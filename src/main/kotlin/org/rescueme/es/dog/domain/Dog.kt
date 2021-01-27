@@ -17,7 +17,7 @@ class Dog {
     private lateinit var dogInformation: DogInformation
 
     @EventHandler
-    fun on(event: DogCreatedEvent) {
+    fun onDogCreatedEvent(event: DogCreatedEvent) {
         dogId = event.aggregateId().let { DogId.fromString(it) }
         shelterId = event.shelterId.let { ShelterId.fromString(it) }
         dogInformation = event.dogInformation
@@ -25,11 +25,14 @@ class Dog {
 
     companion object {
         fun create(dogId: DogId, shelterId: ShelterId, dogInformation: DogInformation) {
-            apply(DogCreatedEvent(
+            apply(
+                DogCreatedEvent(
                     aggregateId = dogId.asString(),
                     occurredOn = ZonedDateTime.now(),
                     shelterId = shelterId.asString(),
-                    dogInformation = dogInformation))
+                    dogInformation = dogInformation
+                )
+            )
         }
     }
 }

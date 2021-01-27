@@ -19,15 +19,15 @@ open class CqrsConfiguration {
 
     @Bean
     open fun customCommandBus(commandGateway: CommandGateway): CommandBus =
-            CommandBusAxon(commandGateway)
+        CommandBusAxon(commandGateway)
 
     @Bean
     open fun customQueryBus(queryGateway: QueryGateway): QueryBus =
-            QueryBusAxon(queryGateway)
+        QueryBusAxon(queryGateway)
 
     @Bean
     open fun dogAggregateRepository(eventStore: EventStore): Repository<Dog> =
-            EventSourcingRepository(Dog::class.java, eventStore)
+        EventSourcingRepository(Dog::class.java, eventStore)
 
 }
 

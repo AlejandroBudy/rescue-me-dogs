@@ -15,15 +15,15 @@ class FindDogController(private val queryBus: QueryBus) {
 
     @GetMapping("/dogs/{dogId}")
     fun findById(@PathVariable("dogId") id: String) =
-            queryBus.ask<DogResponse>(FindDogQuery(id))
-                    .thenApply { it.toRestResponse() }
-                    .thenApply { ResponseEntity.ok(it) }
+        queryBus.ask<DogResponse>(FindDogQuery(id))
+            .thenApply { it.toRestResponse() }
+            .thenApply { ResponseEntity.ok(it) }
 
     @GetMapping("/dogs/shelter/{shelterId}")
     fun findByShelter(@PathVariable("shelterId") shelterId: String) =
-            queryBus.ask<DogResponse>(FindDogByShelterQuery(shelterId))
-                    .thenApply { it.toRestResponse() }
-                    .thenApply { ResponseEntity.ok(it) }
+        queryBus.ask<DogResponse>(FindDogByShelterQuery(shelterId))
+            .thenApply { it.toRestResponse() }
+            .thenApply { ResponseEntity.ok(it) }
 
 
 }

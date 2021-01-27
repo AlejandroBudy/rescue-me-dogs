@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component
 @Component
 class DogByShelterFinder(private val dogViewRepository: DogViewRepository) {
     operator fun invoke(id: ShelterId) =
-            dogViewRepository.findByShelter(id).also {
-                it ?: throw DogViewNotFoundException("Dogs for shelter $id not found")
-            }!!
+        dogViewRepository.findByShelter(id).also {
+            it ?: throw DogViewNotFoundException("Dogs for shelter $id not found")
+        }!!
 
 }

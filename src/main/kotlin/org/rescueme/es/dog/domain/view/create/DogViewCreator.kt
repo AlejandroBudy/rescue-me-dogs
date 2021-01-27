@@ -1,7 +1,7 @@
 package org.rescueme.es.dog.domain.view.create
 
-import org.rescueme.es.dog.domain.DogInformation
 import org.rescueme.es.dog.domain.DogId
+import org.rescueme.es.dog.domain.DogInformation
 import org.rescueme.es.dog.domain.view.DogView
 import org.rescueme.es.dog.domain.view.DogViewRepository
 import org.rescueme.es.shelter.domain.ShelterId
