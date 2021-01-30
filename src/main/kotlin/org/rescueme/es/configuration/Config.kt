@@ -1,9 +1,9 @@
 package org.rescueme.es.configuration
 
 import org.axonframework.commandhandling.gateway.CommandGateway
-import org.axonframework.commandhandling.model.Repository
 import org.axonframework.eventsourcing.EventSourcingRepository
 import org.axonframework.eventsourcing.eventstore.EventStore
+import org.axonframework.modelling.command.Repository
 import org.axonframework.queryhandling.QueryGateway
 import org.rescueme.es.dog.domain.Dog
 import org.rescueme.es.shared.command.domain.CommandBus
@@ -27,7 +27,9 @@ open class CqrsConfiguration {
 
     @Bean
     open fun dogAggregateRepository(eventStore: EventStore): Repository<Dog> =
-        EventSourcingRepository(Dog::class.java, eventStore)
+        EventSourcingRepository.builder(Dog::class.java)
+            .eventStore(eventStore)
+            .build<EventSourcingRepository<Dog>>()
 
 }
 

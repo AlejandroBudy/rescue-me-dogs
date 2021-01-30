@@ -9,7 +9,7 @@ import kotlin.reflect.KClass
 class QueryBusAxon(private val gateway: QueryGateway) : QueryBus {
     override fun <T> sendQuery(query: Query, klass: KClass<*>): CompletableFuture<T> {
         @Suppress("UNCHECKED_CAST")
-        return gateway.send(query, klass.javaPrimitiveType ?: klass.java)
+        return gateway.query(query, klass.javaPrimitiveType ?: klass.java)
             .thenApply { it as T }
     }
 }

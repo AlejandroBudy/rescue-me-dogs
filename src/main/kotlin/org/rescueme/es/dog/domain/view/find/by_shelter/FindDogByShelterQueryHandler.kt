@@ -6,7 +6,7 @@ import org.rescueme.es.shelter.domain.ShelterId
 import org.springframework.stereotype.Component
 
 @Component
-class FindDogByShelterQueryHandler(private val finder: DogByShelterFinder) {
+open class FindDogByShelterQueryHandler(private val finder: DogByShelterFinder) {
 
     @QueryHandler
     fun on(findDogByShelterQuery: FindDogByShelterQuery) =

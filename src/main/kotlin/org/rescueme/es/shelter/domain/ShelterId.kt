@@ -15,7 +15,6 @@ data class ShelterId(@Column(columnDefinition = "binary(16)", name = "shelterId"
 
     companion object {
         fun fromString(uuid: String): ShelterId {
-            println("-------------------------------> ${UUID.randomUUID()}")
             return ShelterId(UUID.fromString(uuid))
         }
 

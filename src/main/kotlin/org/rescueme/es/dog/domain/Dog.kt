@@ -1,8 +1,9 @@
 package org.rescueme.es.dog.domain
 
-import org.axonframework.commandhandling.model.AggregateIdentifier
-import org.axonframework.commandhandling.model.AggregateLifecycle.apply
+
 import org.axonframework.eventhandling.EventHandler
+import org.axonframework.modelling.command.AggregateIdentifier
+import org.axonframework.modelling.command.AggregateLifecycle.apply
 import org.axonframework.spring.stereotype.Aggregate
 import org.rescueme.es.dog.domain.create.DogCreatedEvent
 import org.rescueme.es.shelter.domain.ShelterId

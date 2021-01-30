@@ -6,7 +6,7 @@ import org.rescueme.es.dog.domain.DogInformation
 import org.rescueme.es.dog.domain.create.DogRepository
 import org.rescueme.es.shelter.domain.ShelterId
 import org.springframework.stereotype.Repository
-import org.axonframework.commandhandling.model.Repository as AggregateRepository
+import org.axonframework.modelling.command.Repository as AggregateRepository
 
 @Repository
 open class AxonDogRepository(private val persistenceRepository: AggregateRepository<Dog>) : DogRepository {
