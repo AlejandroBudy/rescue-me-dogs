@@ -8,6 +8,9 @@ import org.rescueme.es.dog.domain.create.CreateDogCommand
 import org.rescueme.es.dog.domain.create.DogCreatedEvent
 import org.rescueme.es.dog.domain.view.DogDetailsResponse
 import org.rescueme.es.dog.domain.view.DogResponse
+import org.rescueme.es.dog.domain.view.DogView
+import org.rescueme.es.dog.domain.view.find.by_id.FindDogQuery
+import org.rescueme.es.dog.domain.view.find.by_shelter.FindDogByShelterQuery
 import org.rescueme.es.shelter.domain.ShelterId
 import java.time.ZonedDateTime
 
@@ -72,3 +75,17 @@ fun createDogCommand() =
         breed = breed,
         shelterID = shelterId
     )
+
+fun createDogView() =
+    DogView(
+        dogIdVO,
+        shelterIdVO,
+        createDogInformation(),
+        dateTime
+    )
+
+fun createFindDogQuery() =
+    FindDogQuery(id = dogId)
+
+fun createFindDogByShelterQuery() =
+    FindDogByShelterQuery(id = shelterId)
