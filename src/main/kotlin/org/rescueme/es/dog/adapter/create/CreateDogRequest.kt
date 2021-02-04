@@ -1,6 +1,6 @@
 package org.rescueme.es.dog.adapter.create
 
-import org.rescueme.es.dog.domain.create.CreateDogCommand
+import org.rescueme.es.dog.application.create.CreateDogCommand
 
 data class CreateDogRequest(
     val name: String,

@@ -4,7 +4,7 @@ import org.rescueme.es.dog.adapter.find.DogDetailsRestResponse
 import org.rescueme.es.dog.adapter.find.DogRestResponse
 import org.rescueme.es.dog.domain.DogId
 import org.rescueme.es.dog.domain.DogInformation
-import org.rescueme.es.dog.domain.create.CreateDogCommand
+import org.rescueme.es.dog.application.create.CreateDogCommand
 import org.rescueme.es.dog.domain.create.DogCreatedEvent
 import org.rescueme.es.dog.domain.view.DogDetailsResponse
 import org.rescueme.es.dog.domain.view.DogResponse

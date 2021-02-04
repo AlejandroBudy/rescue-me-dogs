@@ -8,6 +8,7 @@ import org.jetbrains.spek.api.dsl.describe
 import org.jetbrains.spek.api.dsl.it
 import org.jetbrains.spek.api.dsl.on
 import org.rescueme.es.dog.*
+import org.rescueme.es.dog.application.view.create.CreateDogViewOnDogCreatedEventHandler
 
 class CreateDogViewOnDogCreatedEventHandlerSpec : Spek({
 

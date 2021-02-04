@@ -8,6 +8,7 @@ import org.jetbrains.spek.api.dsl.describe
 import org.jetbrains.spek.api.dsl.it
 import org.jetbrains.spek.api.dsl.on
 import org.rescueme.es.dog.*
+import org.rescueme.es.dog.application.create.CreateDogCommandHandler
 import org.rescueme.es.dog.domain.DogId
 import org.rescueme.es.dog.domain.DogInformation
 import org.rescueme.es.shelter.domain.ShelterId

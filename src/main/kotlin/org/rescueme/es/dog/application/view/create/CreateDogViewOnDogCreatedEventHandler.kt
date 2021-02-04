@@ -1,8 +1,9 @@
-package org.rescueme.es.dog.domain.view.create
+package org.rescueme.es.dog.application.view.create
 
 import org.axonframework.eventhandling.EventHandler
 import org.rescueme.es.dog.domain.DogId
 import org.rescueme.es.dog.domain.create.DogCreatedEvent
+import org.rescueme.es.dog.domain.view.create.DogViewCreator
 import org.rescueme.es.shelter.domain.ShelterId
 import org.springframework.stereotype.Component
 

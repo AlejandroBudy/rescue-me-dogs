@@ -7,6 +7,7 @@ import org.jetbrains.spek.api.dsl.describe
 import org.jetbrains.spek.api.dsl.it
 import org.jetbrains.spek.api.dsl.on
 import org.junit.jupiter.api.assertThrows
+import org.rescueme.es.dog.application.view.find.by_id.FindDogQueryHandler
 import org.rescueme.es.dog.createDogResponse
 import org.rescueme.es.dog.createDogView
 import org.rescueme.es.dog.createFindDogQuery

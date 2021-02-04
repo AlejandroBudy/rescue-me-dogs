@@ -1,4 +1,4 @@
-package org.rescueme.es.dog.domain.create
+package org.rescueme.es.dog.application.create
 
 import org.axonframework.modelling.command.TargetAggregateIdentifier
 import org.rescueme.es.shared.command.domain.Command
