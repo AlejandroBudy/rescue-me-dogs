@@ -18,10 +18,10 @@ class CreateDogViewOnDogCreatedEventHandlerSpec : Spek({
 
     describe("#${CreateDogViewOnDogCreatedEventHandler::on.name}") {
         on("Dog created Event") {
-            every { creator.invoke(dogIdVO, shelterIdVO, dogInformation, dateTime) } returns Unit
+            every { creator.invoke(dogIdVO, shelterIdVO, createDogSpecification(), dateTime) } returns Unit
             it("Should invoke creator ok") {
                 eventHandler.on(createDogCreatedEvent())
-                verify(exactly = 1) { creator.invoke(dogIdVO, shelterIdVO, dogInformation, dateTime) }
+                verify(exactly = 1) { creator.invoke(dogIdVO, shelterIdVO, createDogSpecification(), dateTime) }
             }
         }
     }

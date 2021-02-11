@@ -15,7 +15,7 @@ class CreateDogViewOnDogCreatedEventHandler(private val creator: DogViewCreator)
         creator(
             DogId.fromString(event.aggregateId),
             ShelterId.fromString(event.shelterId),
-            event.dogInformation,
+            event.dogSpecification,
             event.occurredOn
         )
     }
