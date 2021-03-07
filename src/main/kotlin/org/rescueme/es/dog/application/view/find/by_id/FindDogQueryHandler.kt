@@ -1,7 +1,9 @@
-package org.rescueme.es.dog.domain.view.find.by_id
+package org.rescueme.es.dog.application.view.find.by_id
 
 import org.axonframework.queryhandling.QueryHandler
 import org.rescueme.es.dog.domain.DogId
+import org.rescueme.es.dog.domain.view.find.by_id.DogFinder
+import org.rescueme.es.dog.domain.view.find.by_id.FindDogQuery
 import org.rescueme.es.dog.domain.view.toResponse
 import org.springframework.stereotype.Component
 

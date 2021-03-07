@@ -19,7 +19,7 @@ class DogViewCreatorSpec : Spek({
         on("Invocation to dog create") {
             every { dogViewRepository.save(createDogView()) } returns Unit
             it("Should invoke repository to save dog view") {
-                creator.invoke(dogIdVO, shelterIdVO, createDogInformation(), dateTime)
+                creator.invoke(dogIdVO, shelterIdVO, createDogSpecification(), dateTime)
                 verify(exactly = 1) { dogViewRepository.save(createDogView()) }
             }
         }

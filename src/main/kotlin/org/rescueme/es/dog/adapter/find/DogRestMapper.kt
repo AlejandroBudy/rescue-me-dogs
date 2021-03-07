@@ -9,6 +9,9 @@ fun DogResponse.toRestResponse() =
         createdOn,
         DogDetailsRestResponse(
             details.name,
-            details.breed
+            details.breed,
+            details.location,
+            details.color,
+            details.birthDate
         )
     )

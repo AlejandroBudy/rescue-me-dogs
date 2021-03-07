@@ -7,10 +7,11 @@ import org.jetbrains.spek.api.Spek
 import org.jetbrains.spek.api.dsl.describe
 import org.jetbrains.spek.api.dsl.it
 import org.jetbrains.spek.api.dsl.on
-import org.rescueme.es.dog.*
-import org.rescueme.es.dog.domain.DogId
-import org.rescueme.es.dog.domain.DogInformation
-import org.rescueme.es.shelter.domain.ShelterId
+import org.rescueme.es.dog.application.create.CreateDogCommandHandler
+import org.rescueme.es.dog.createDogCommand
+import org.rescueme.es.dog.createDogSpecification
+import org.rescueme.es.dog.dogIdVO
+import org.rescueme.es.dog.shelterIdVO
 
 class CreateDogCommandHandlerSpec : Spek({
 
@@ -23,9 +24,9 @@ class CreateDogCommandHandlerSpec : Spek({
         on("Create command handler") {
             every {
                 creator.invoke(
-                    DogId.fromString(dogId),
-                    ShelterId.fromString(shelterId),
-                    DogInformation(name, breed)
+                    dogIdVO,
+                    shelterIdVO,
+                    createDogSpecification()
                 )
             } returns Unit
             it("Should create dog ok") {

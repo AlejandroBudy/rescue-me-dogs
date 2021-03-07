@@ -10,6 +10,9 @@ data class DogResponse(
 )
 
 data class DogDetailsResponse(
-    val name: String,
-    val breed: String
+    val name: String?,
+    val breed: String?,
+    val location: String?,
+    val color: String?,
+    val birthDate: String?
 )
