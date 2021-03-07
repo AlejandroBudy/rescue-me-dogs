@@ -11,7 +11,6 @@ import java.util.*
 @RestController
 class CreateDogController(private val commandBus: CommandBus) {
 
-
     @PostMapping("/dogs")
     fun registerDogInShelter(@RequestBody dog: CreateDogRequest): ResponseEntity<Unit> {
         val dogId = UUID.randomUUID().toString()
