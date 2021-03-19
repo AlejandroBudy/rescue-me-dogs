@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:h2:file:~/rescue-me
+    url: jdbc:h2:file:~/Documents/rescue-me
     driver-class-name: org.h2.Driver
     username: sa
     password: ''
