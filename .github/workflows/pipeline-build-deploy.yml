@@ -56,7 +56,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         env:
-          REPO: ${{ secrets.DOCKER_REPO }}
+          REPO: ${{ secrets.DOCKER_REPO_DOGS }}
         with:
           context: .
           push: true
