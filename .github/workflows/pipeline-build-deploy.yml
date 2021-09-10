@@ -55,9 +55,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build and push
         uses: docker/build-push-action@v2
-        env:
-          REPO: ${{ secrets.DOCKER_REPO_DOGS }}
         with:
           context: .
           push: true
-          tags: ${REPO}:latest,${REPO}:${GITHUB_RUN_ID}
+          tags: rescuemeapp/rescue-me-dogs:latest,rescuemeapp/rescue-me-dogs:${GITHUB_RUN_ID}
