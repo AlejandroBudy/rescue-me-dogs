@@ -60,4 +60,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: $REPO:latest,$REPO:${GITHUB_RUN_ID}
+          tags: ${REPO}:latest,${REPO}:${GITHUB_RUN_ID}
