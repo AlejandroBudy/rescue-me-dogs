@@ -58,4 +58,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: rescuemeapp/rescue-me-dogs:latest,rescuemeapp/rescue-me-dogs:${GITHUB_RUN_ID}
+          tags: ${{ secrets.DOCKER_REPO_DOGS }}:latest,${{ secrets.DOCKER_REPO_DOGS }}:${{ env.GITHUB_RUN_ID}}
