@@ -1,4 +1,4 @@
-FROM maven:3.8.2-jdk-11-alpine AS MAVEN_ENV
+FROM maven:3.8.2-jdk-11-slim AS MAVEN_ENV
 WORKDIR /build/
 COPY pom.xml /build
 COPY src /build/src
