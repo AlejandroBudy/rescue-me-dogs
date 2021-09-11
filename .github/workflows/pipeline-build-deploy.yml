@@ -43,6 +43,8 @@ jobs:
       - pre-test
       - artifact
     steps:
+      - name: Set run id
+        run: echo "RUN_ID=${GITHUB_RUN_ID}" >> $GITHUB_ENV
       - name: Checkout
         uses: actions/checkout@v2
       - name: Set up QEMU
@@ -58,7 +60,6 @@ jobs:
         uses: docker/build-push-action@v2
         env:
           REPO: ${{ secrets.DOCKER_REPO_DOGS }}
-          RUN_ID: $GITHUB_RUN_ID
         with:
           context: .
           push: true
