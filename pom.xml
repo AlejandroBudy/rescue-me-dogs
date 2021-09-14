@@ -14,6 +14,15 @@
     <name>rescue-me-dogs</name>
     <description>Rescue me dogs</description>
 
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/rescue-me/rescue-me-dogs</url>
+        </repository>
+    </distributionManagement>
+
     <properties>
         <java.version>11</java.version>
         <kotlin.version>1.4.20</kotlin.version>
@@ -104,6 +113,13 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.arrow-kt/arrow-core -->
+        <dependency>
+            <groupId>io.arrow-kt</groupId>
+            <artifactId>arrow-core</artifactId>
+            <version>0.13.1</version>
         </dependency>
 
     </dependencies>
